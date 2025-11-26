@@ -1,6 +1,8 @@
 use async_trait::async_trait;
 use pingora::prelude::*;
 use pingora::proxy::{ProxyHttp, Session};
+use pingora::http::ResponseHeader;
+use http::header::HeaderValue;
 use pingora::cache::{MemCache, CacheKey};
 use pingora::lb::LoadBalancer;
 use pingora::lb::selection::RoundRobin;
@@ -47,6 +49,16 @@ impl ProxyHttp for CdnProxy {
     }
 
     async fn request_filter(&self, session: &mut Session, _ctx: &mut ()) -> Result<bool> {
+        // Rewrite rule: /a/1.html -> /a/403.html
+        {
+            let req = session.req_header_mut();
+            if req.uri.path() == "/a/1.html" {
+                if let Ok(new_uri) = "/a/403.html".parse::<http::Uri>() {
+                    req.set_uri(new_uri);
+                }
+            }
+        }
+
         // Enable cache for GET and HEAD requests
         let req = session.req_header();
         if req.method != http::Method::GET && req.method != http::Method::HEAD {
@@ -56,6 +68,12 @@ impl ProxyHttp for CdnProxy {
         // Create a cache key based on the request path and host
         // In a real CDN, you might want to include query params, headers, etc.
         let path = req.uri.path();
+
+        // Force no cache for /noc/nodelete.gif
+        if path == "/noc/nodelete.gif" {
+            return Ok(false);
+        }
+
         // Use the Host header from the request, or default to www.yingcai.com
         let host = req.uri.host().unwrap_or("www.yingcai.com");
         
@@ -78,36 +96,40 @@ impl ProxyHttp for CdnProxy {
         Ok(false)
     }
 
-/*
-    async fn upstream_response_filter(
+    fn upstream_response_filter(
         &self,
         session: &mut Session,
-        resp: &ResponseHeader,
+        upstream_response: &mut ResponseHeader,
         _ctx: &mut (),
     ) -> Result<()> {
-        // Decide if we should cache the response
-        // For example, only cache 200 OK
-        if resp.status != 200 {
-            session.cache.disable(NoCacheReason::Custom("Not 200 OK"));
-        } else {
-            // Set cache meta if needed, or rely on default
-            // In 0.6, we might need to set meta explicitly if we want to control TTL
-            // But for now, let's see if this compiles.
-            // If we need to set TTL, we might use session.cache.set_max_file_size or similar?
-            // Or maybe we can't set TTL here easily without CacheMeta.
-            // But let's first get it to compile.
+        let path = session.req_header().uri.path();
+        if path.starts_with("/img/") {
+            let _ = upstream_response.insert_header("Cache-Control", "max-age=3600");
+        } else if path.starts_with("/css/") {
+            let _ = upstream_response.insert_header("Cache-Control", "max-age=21600");
+        } else if path.starts_with("/js/") {
+            let _ = upstream_response.insert_header("Cache-Control", "max-age=2592000");
         }
         Ok(())
     }
-*/
-}
 
-// Helper enum for response_cache_filter return type if not exported directly
-// (Adjust based on actual Pingora API if needed, usually it's in pingora::proxy)
-// Assuming CacheAction is available in prelude or proxy module.
-// If not, we might need to import it specifically.
-// It seems it might be `pingora::proxy::CacheAction` or similar.
-// For now, I'll assume it's available via prelude or I'll let the user fix imports.
+    async fn response_filter(
+        &self,
+        session: &mut Session,
+        upstream_response: &mut ResponseHeader,
+        _ctx: &mut (),
+    ) -> Result<()> {
+        if let Some(client_addr) = session.client_addr() {
+            if let Some(inet_addr) = client_addr.as_inet() {
+                let ip = inet_addr.ip().to_string();
+                if let Ok(header_value) = HeaderValue::from_str(&ip) {
+                    let _ = upstream_response.insert_header("MYCX", header_value);
+                }
+            }
+        }
+        Ok(())
+    }
+}
 
 fn main() {
     env_logger::init();
