@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        dnf install -y rpm-build rpmdevtools rust cargo openssl-devel gcc make systemd-rpm-macros
+        dnf install -y rpm-build rpmdevtools rust cargo openssl-devel gcc gcc-c++ make cmake systemd-rpm-macros
 
     - name: Prepare Source Tarball
       run: |
