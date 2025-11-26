@@ -1,0 +1,52 @@
+name: Build RPM Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-rpm:
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest # 使用 Fedora 容器，因为它原生支持 rpmbuild 和 dnf
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        dnf install -y rpm-build rpmdevtools rust cargo openssl-devel gcc make systemd-rpm-macros
+
+    - name: Prepare Source Tarball
+      run: |
+        # 创建 rpmbuild 目录结构
+        rpmdev-setuptree
+        
+        # 获取版本号 (假设 tag 格式为 v0.1.0)
+        VERSION=0.1.0
+        NAME=pingora_cache_proxy
+        
+        # 创建源码目录并打包
+        mkdir -p ${NAME}-${VERSION}
+        # 复制 pingora_cache 目录下的所有内容到源码目录
+        cp -r pingora_cache/* ${NAME}-${VERSION}/
+        
+        # 打包成 tar.gz
+        tar -czf ~/rpmbuild/SOURCES/${NAME}-${VERSION}.tar.gz ${NAME}-${VERSION}
+
+    - name: Build RPM
+      run: |
+        # 复制 spec 文件到 SPECS 目录
+        cp pingora_cache/rpm/pingora_cache_proxy.spec ~/rpmbuild/SPECS/
+        
+        # 执行构建
+        rpmbuild -bb ~/rpmbuild/SPECS/pingora_cache_proxy.spec
+
+    - name: Upload RPM Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: pingora-rpm
+        path: ~/rpmbuild/RPMS/**/*.rpm
