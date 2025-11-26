@@ -1,9 +1,0 @@
-/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/deps/librustc_demangle-33f341e8ead3a28f.rmeta: /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/lib.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/legacy.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/v0.rs
-
-/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/deps/librustc_demangle-33f341e8ead3a28f.rlib: /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/lib.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/legacy.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/v0.rs
-
-/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/deps/rustc_demangle-33f341e8ead3a28f.d: /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/lib.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/legacy.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/v0.rs
-
-/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/lib.rs:
-/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/legacy.rs:
-/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustc-demangle-0.1.26/src/v0.rs:
