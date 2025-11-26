@@ -1,0 +1,14 @@
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# System
+.DS_Store
