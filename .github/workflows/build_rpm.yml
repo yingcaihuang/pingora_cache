@@ -11,16 +11,28 @@ permissions:
 
 jobs:
   build-rpm:
+    name: Build on ${{ matrix.os }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - os: centos8
+            image: rockylinux:8
+          - os: centos9
+            image: quay.io/centos/centos:stream9
     container:
-      image: fedora:latest # 使用 Fedora 容器，因为它原生支持 rpmbuild 和 dnf
+      image: ${{ matrix.image }}
 
     steps:
+    - name: Install git
+      run: dnf install -y git
+
     - name: Checkout code
       uses: actions/checkout@v4
 
     - name: Install dependencies
       run: |
+        dnf install -y epel-release || true
         dnf install -y rpm-build rpmdevtools rust cargo openssl-devel gcc gcc-c++ make cmake systemd-rpm-macros
 
     - name: Prepare Source Tarball
@@ -55,7 +67,7 @@ jobs:
     - name: Upload RPM Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: pingora-rpm
+        name: pingora-rpm-${{ matrix.os }}
         path: rpms/**/*.rpm
 
     - name: Create Release
