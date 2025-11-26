@@ -109,6 +109,13 @@ impl ProxyHttp for CdnProxy {
             let _ = upstream_response.insert_header("Cache-Control", "max-age=21600");
         } else if path.starts_with("/js/") {
             let _ = upstream_response.insert_header("Cache-Control", "max-age=2592000");
+        } else if path.ends_with(".exe")
+            || path.ends_with(".iso")
+            || path.ends_with(".zip")
+            || path.ends_with(".rar")
+        {
+            // Cache large files for 7 days (604800 seconds)
+            let _ = upstream_response.insert_header("Cache-Control", "max-age=604800");
         }
         Ok(())
     }
