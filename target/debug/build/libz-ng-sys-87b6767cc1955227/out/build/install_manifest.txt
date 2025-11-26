@@ -1,0 +1,9 @@
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/lib/libz-ng.a
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/include/zlib-ng.h
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/include/zlib_name_mangling-ng.h
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/include/zconf-ng.h
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/lib/pkgconfig/zlib-ng.pc
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/lib/cmake/zlib-ng/zlib-ng.cmake
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/lib/cmake/zlib-ng/zlib-ng-debug.cmake
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/lib/cmake/zlib-ng/zlib-ng-config.cmake
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/lib/cmake/zlib-ng/zlib-ng-config-version.cmake

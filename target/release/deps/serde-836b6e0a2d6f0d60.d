@@ -1,0 +1,14 @@
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/deps/libserde-836b6e0a2d6f0d60.rmeta: /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/lib.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/integer128.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/mod.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/de.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/ser.rs /Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/build/serde-29bb91415f861254/out/private.rs
+
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/deps/libserde-836b6e0a2d6f0d60.rlib: /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/lib.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/integer128.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/mod.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/de.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/ser.rs /Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/build/serde-29bb91415f861254/out/private.rs
+
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/deps/serde-836b6e0a2d6f0d60.d: /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/lib.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/integer128.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/mod.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/de.rs /Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/ser.rs /Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/build/serde-29bb91415f861254/out/private.rs
+
+/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/lib.rs:
+/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/integer128.rs:
+/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/mod.rs:
+/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/de.rs:
+/Users/betty/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde-1.0.228/src/private/ser.rs:
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/build/serde-29bb91415f861254/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/release/build/serde-29bb91415f861254/out

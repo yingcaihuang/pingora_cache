@@ -1,0 +1,9 @@
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/zlib.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/package.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/package_source.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/edit_cache.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/rebuild_cache.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/list_install_components.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/install.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/install/local.dir
+/Users/betty/Downloads/cdn-cache-ai/pingora_cache/target/debug/build/libz-ng-sys-87b6767cc1955227/out/build/CMakeFiles/install/strip.dir

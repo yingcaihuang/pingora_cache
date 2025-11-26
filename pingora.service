@@ -1,0 +1,25 @@
+[Unit]
+Description=Pingora Cache Proxy Service
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# 请修改为实际的二进制文件路径
+# Please update this path to your actual binary location
+ExecStart=/opt/pingora_cache/pingora_cache_proxy
+# 工作目录
+WorkingDirectory=/opt/pingora_cache
+# 总是重启
+Restart=always
+RestartSec=5
+# 运行用户 (如果端口大于1024，建议使用非root用户)
+# User=www-data
+# Group=www-data
+# 文件描述符限制
+LimitNOFILE=65536
+# 日志环境变量 (可选)
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target
