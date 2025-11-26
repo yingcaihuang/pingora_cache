@@ -3,6 +3,9 @@ Version:        0.1.0
 Release:        1%{?dist}
 Summary:        High performance CDN cache proxy based on Pingora
 
+# 禁用 debuginfo 包生成，避免 "Empty %files file debugsourcefiles.list" 错误
+%global debug_package %{nil}
+
 License:        Proprietary
 URL:            http://www.yingcai.com
 Source0:        %{name}-%{version}.tar.gz
